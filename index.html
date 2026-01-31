@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мастер на дом | Россия</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔧 Мастер на дом</h1>
+            <p class="subtitle">Работаем по всей России. Решим проблему быстро!</p>
+        </header>
+
+        <div class="user-info">
+            <p id="user-name">Привет, пользователь!</p>
+            <button id="get-data-btn" class="btn">Показать мои данные</button>
+        </div>
+
+        <div class="services">
+            <h2>🎯 Выберите услугу:</h2>
+            
+            <div class="service-card" data-service="plumber">
+                <div class="icon">🚰</div>
+                <h3>Сантехник</h3>
+                <p>Установка, ремонт, прочистка</p>
+                <button class="btn order-btn" data-service="plumber">Выбрать</button>
+            </div>
+
+            <div class="service-card" data-service="electrician">
+                <div class="icon">⚡</div>
+                <h3>Электрик</h3>
+                <p>Проводка, розетки, освещение</p>
+                <button class="btn order-btn" data-service="electrician">Выбрать</button>
+            </div>
+
+            <div class="service-card" data-service="furniture">
+                <div class="icon">🛠️</div>
+                <h3>Сборка мебели</h3>
+                <p>Шкафы, кухни, кровати, столы</p>
+                <button class="btn order-btn" data-service="furniture">Выбрать</button>
+            </div>
+        </div>
+
+        <div class="order-form hidden" id="order-form">
+            <h2>📝 Оформление заказа</h2>
+            <div class="form-group">
+                <label>Услуга:</label>
+                <input type="text" id="service-name" readonly>
+            </div>
+            <div class="form-group">
+                <label>Ваше имя:</label>
+                <input type="text" id="client-name" placeholder="Как к вам обращаться?">
+            </div>
+            <div class="form-group">
+                <label>Телефон:</label>
+                <input type="tel" id="client-phone" placeholder="+7 (999) 123-45-67">
+            </div>
+            <div class="form-group">
+                <label>Описание проблемы:</label>
+                <textarea id="problem-desc" rows="3" placeholder="Опишите что случилось..."></textarea>
+            </div>
+            <button class="btn submit-btn" id="submit-order">Отправить заявку</button>
+            <button class="btn cancel-btn" id="cancel-order">Отмена</button>
+        </div>
+
+        <div class="result hidden" id="result">
+            <h2>✅ Заявка отправлена!</h2>
+            <p>Мы свяжемся с вами в течение 15 минут.</p>
+            <button class="btn" id="new-order">Новый заказ</button>
+        </div>
+
+        <footer>
+            <p>📞 Телефон поддержки: 8-800-123-45-67</p>
+            <p>⏰ Работаем 24/7 по всей России</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
