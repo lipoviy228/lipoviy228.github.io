@@ -9,10 +9,11 @@ body {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     min-height: 100vh;
     padding: 20px;
+    color: #333;
 }
 
 .container {
-    max-width: 500px;
+    max-width: 800px;
     margin: 0 auto;
     background: white;
     border-radius: 20px;
@@ -39,53 +40,171 @@ h1 {
 }
 
 .user-info {
+    display: flex;
+    align-items: center;
     background: #f8f9fa;
     padding: 15px;
     border-radius: 12px;
     margin-bottom: 25px;
-    text-align: center;
 }
 
-.services {
+.user-avatar {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.user-details h3 {
+    margin-bottom: 5px;
+}
+
+.user-details p {
+    color: #666;
+    font-size: 14px;
+}
+
+.dashboard {
     margin-bottom: 30px;
 }
 
-h2 {
-    color: #444;
-    margin-bottom: 20px;
-    font-size: 22px;
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-top: 15px;
 }
 
-.service-card {
+.stat-card {
     background: white;
     border: 2px solid #e9ecef;
     border-radius: 15px;
     padding: 20px;
-    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
     transition: all 0.3s;
-    text-align: center;
 }
 
-.service-card:hover {
+.stat-card:hover {
     border-color: #667eea;
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(102, 126, 234, 0.1);
 }
 
-.icon {
-    font-size: 40px;
+.stat-icon {
+    font-size: 30px;
+    margin-right: 15px;
+}
+
+.stat-info h3 {
+    font-size: 24px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.stat-info p {
+    color: #666;
+    font-size: 14px;
+}
+
+.menu-grid {
+    margin-bottom: 30px;
+}
+
+.menu-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.menu-btn {
+    background: white;
+    border: 2px solid #e9ecef;
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+}
+
+.menu-btn:hover {
+    border-color: #667eea;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.1);
+}
+
+.menu-icon {
+    font-size: 30px;
     margin-bottom: 10px;
 }
 
-.service-card h3 {
-    color: #333;
-    margin-bottom: 8px;
+.recent-orders {
+    margin-bottom: 30px;
 }
 
-.service-card p {
+.orders-list {
+    margin-top: 15px;
+}
+
+.order-item {
+    background: white;
+    border: 2px solid #e9ecef;
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s;
+}
+
+.order-item:hover {
+    border-color: #667eea;
+}
+
+.order-info h4 {
+    margin-bottom: 5px;
+}
+
+.order-info p {
     color: #666;
     font-size: 14px;
-    margin-bottom: 15px;
+    margin-bottom: 3px;
+}
+
+.order-status {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.status-new {
+    background: #ffebee;
+    color: #d32f2f;
+}
+
+.status-assigned {
+    background: #fff3e0;
+    color: #f57c00;
+}
+
+.status-in_progress {
+    background: #e3f2fd;
+    color: #1976d2;
+}
+
+.status-completed {
+    background: #e8f5e9;
+    color: #388e3c;
 }
 
 .btn {
@@ -98,7 +217,8 @@ h2 {
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s;
-    width: 100%;
+    display: inline-block;
+    text-align: center;
 }
 
 .btn:hover {
@@ -106,15 +226,97 @@ h2 {
     transform: scale(1.02);
 }
 
-.order-btn {
-    background: #4CAF50;
+.btn-secondary {
+    background: #6c757d;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s;
 }
 
-.cancel-btn {
-    background: #f44336;
-    margin-top: 10px;
+.btn-secondary:hover {
+    background: #5a6268;
 }
 
+footer {
+    margin-top: 30px;
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Модальные окна */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    max-width: 500px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.modal h3 {
+    margin-bottom: 20px;
+}
+
+/* Секции */
+.section {
+    display: none;
+}
+
+.section.active {
+    display: block;
+    animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Таблицы */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.table th, .table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.table th {
+    background: #f8f9fa;
+    font-weight: 600;
+}
+
+.table tr:hover {
+    background: #f8f9fa;
+}
+
+/* Формы */
 .form-group {
     margin-bottom: 20px;
 }
@@ -127,7 +329,8 @@ h2 {
 }
 
 .form-group input,
-.form-group textarea {
+.form-group textarea,
+.form-group select {
     width: 100%;
     padding: 12px;
     border: 2px solid #ddd;
@@ -137,34 +340,264 @@ h2 {
 }
 
 .form-group input:focus,
-.form-group textarea:focus {
+.form-group textarea:focus,
+.form-group select:focus {
     border-color: #667eea;
     outline: none;
 }
 
-.hidden {
-    display: none;
+/* Загрузка */
+.loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
 }
 
-.result {
-    text-align: center;
-    padding: 30px;
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #667eea;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 20px;
 }
 
-.result h2 {
-    color: #4CAF50;
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Адаптивность */
+@media (max-width: 600px) {
+    .stats-grid,
+    .menu-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .container {
+        padding: 15px;
+    }
+    
+    footer {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+}
+/* Добавьте эти стили в конец style.css */
+
+.github-header {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+}
+
+.github-header a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #24292e;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.github-header a:hover {
+    background: #444d56;
+    transform: translateY(-2px);
+}
+
+.github-header img {
+    width: 20px;
+    height: 20px;
+}
+
+.alert {
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border-left: 4px solid;
+}
+
+.alert.info {
+    background: #e3f2fd;
+    border-color: #2196f3;
+    color: #0d47a1;
+}
+
+.alert.warning {
+    background: #fff3e0;
+    border-color: #ff9800;
+    color: #e65100;
+}
+
+.alert.success {
+    background: #e8f5e9;
+    border-color: #4caf50;
+    color: #1b5e20;
+}
+
+.alert.error {
+    background: #ffebee;
+    border-color: #f44336;
+    color: #b71c1c;
+}
+
+.api-config {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 25px;
+    border: 2px solid #e9ecef;
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.input-group input {
+    flex: 1;
+}
+
+.btn-small {
+    padding: 8px 16px;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.help-text {
+    font-size: 12px;
+    color: #666;
+    margin-top: 5px;
+}
+
+.connection-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.status-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.status-dot.connected {
+    background: #4caf50;
+    animation: pulse 2s infinite;
+}
+
+.status-dot.disconnected {
+    background: #f44336;
+}
+
+.status-dot.connecting {
+    background: #ff9800;
+    animation: blink 1s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+
+.footer-info {
     margin-bottom: 15px;
 }
 
-footer {
-    margin-top: 30px;
-    text-align: center;
-    color: #777;
+.footer-info p {
+    margin-bottom: 5px;
     font-size: 14px;
-    padding-top: 20px;
-    border-top: 1px solid #eee;
 }
 
-footer p {
-    margin-bottom: 8px;
+.footer-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+pre {
+    background: #f5f5f5;
+    padding: 15px;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    margin: 15px 0;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    justify-content: flex-end;
+}
+
+/* Адаптивность для GitHub Pages */
+@media (max-width: 768px) {
+    .github-header {
+        position: static;
+        margin-bottom: 15px;
+    }
+    
+    .github-header a {
+        justify-content: center;
+    }
+    
+    .footer-actions {
+        flex-wrap: wrap;
+    }
+}
+
+/* Стили для демо-режима */
+.demo-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: linear-gradient(135deg, #ff9800, #f57c00);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    z-index: 100;
+}
+
+/* Загрузка для GitHub Pages */
+.github-loader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+.github-loader::before {
+    content: '';
+    width: 50px;
+    height: 50px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #24292e;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 20px;
 }
